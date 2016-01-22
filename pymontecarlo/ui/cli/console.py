@@ -112,7 +112,7 @@ class ProgressBar(object):
         Closes this progress bar.
         The progress bar will appear in green with *Done* as the status message.
         """
-        text = self._create_bar_text(self._total, 1.0, 'Done')
+        text = self._create_bar_text(1.0, 'Done')
 
         stream = self._console._stdout
         self._console._pre_print(stream, text, COLOR_GREEN)
