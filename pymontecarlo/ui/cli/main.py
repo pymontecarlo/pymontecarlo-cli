@@ -142,12 +142,14 @@ def run(argv=None):
             runner.put(options)
 
         try:
-            while runner.is_alive():
+            while runner.is_alive() and not runner.is_finished():
                 if not quiet: progressbar.update(runner.progress, runner.status)
                 time.sleep(1)
 
         except Exception as ex:
             console.print_exception(ex)
+
+        runner.close()
 
     if not quiet: progressbar.close()
 
