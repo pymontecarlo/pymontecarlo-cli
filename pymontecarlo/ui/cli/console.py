@@ -569,7 +569,7 @@ if os.name == 'nt':
 
 elif os.name == 'posix':
     import re
-    import readline
+    import readline #@UnresolvedImport
 
     RE_SPACE = re.compile('.*\s+$', re.M)
 
